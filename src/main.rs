@@ -12,7 +12,7 @@ fn main() {
             "--color",
             "never",
             "-r",
-            "heads(::@ & bookmarks() & mutable())",
+            "coalesce(heads(::@ & bookmarks() & mutable()), trunk())",
             "-T",
             r#"bookmarks.map(|b| b.name()).join("\0") ++ "\0""#,
             "--config",
